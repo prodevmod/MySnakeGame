@@ -4,6 +4,9 @@ A classic retro **Snake** game with a unique twist! Instead of simply eating app
 
 To make things even more interesting, some apples are **poisonous**, causing you to lose both size and score.
 
+<img width="797" height="798" alt="image" src="https://github.com/user-attachments/assets/39557411-8e4a-4758-8794-6ef5b3be5ca0" />
+
+
 ---
 
 #  Features
@@ -59,6 +62,8 @@ Your **Final Score** will be displayed at the end of each run.
 
 ---
 
+
+
 #  About the Idea
 
 This project was inspired by a bug I noticed in a video where apples remained on the map after being eaten.
@@ -77,6 +82,9 @@ Building this project helped me learn more about:
 - Game state management with Pygame
 
 I plan to continue expanding the game with new mechanics and features.
+
+<img width="804" height="829" alt="image" src="https://github.com/user-attachments/assets/f3ab1f7c-6b6d-4ed5-95b8-3652b2ab2acc" />
+
 
 ---
 
@@ -101,6 +109,9 @@ pip install pygame
 ---
 
 ## 3. Run the game
+
+<img width="798" height="822" alt="image" src="https://github.com/user-attachments/assets/ebccf03a-4d12-4ab4-84ab-8729bf39049f" />
+
 
 ```bash
 python main.py
@@ -142,3 +153,6 @@ Example:
 # ❤️ Author
 
 Made with ❤️ by **Rosario Alexandros Morabito**
+
+<img width="798" height="800" alt="image" src="https://github.com/user-attachments/assets/ec2fa6a6-b8b4-4ccf-af3b-c68ca273704d" />
+
