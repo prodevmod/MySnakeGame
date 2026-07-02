@@ -1,41 +1,144 @@
-# SNAKEGAME
+# 🐍 SNAKEGAME
 
+A classic retro **Snake** game with a unique twist! Instead of simply eating apples, every apple you eat becomes a **permanent obstacle**, making the map progressively more challenging. As your snake grows, so does the difficulty.
 
-<img width="804" height="829" alt="image" src="https://github.com/user-attachments/assets/5503fe44-da55-4ffd-93c6-2addc827f8c9" />
+To make things even more interesting, some apples are **poisonous**, causing you to lose both size and score.
 
-The classic's Retro Snake Game Knock Off with a Twist. In this game you don't just eat apples but the apples become obstacles. That way the farther you progress in the game, the harder it gets. Because not only does your size grow but the number of obstacles in the map grows too.
-It is a very fun game, especially when you keep track of your highest score. Some apples are poisonous and will end up in you losing size and score. 
+---
 
+#  Features
 
-<img width="798" height="822" alt="image" src="https://github.com/user-attachments/assets/85323ccf-495d-48da-946d-411eb8d16d3e" />
+-  Classic Snake gameplay with a unique obstacle mechanic
+-  Every eaten apple becomes a permanent wall
+-  Poison apples reduce your snake's length and score
+-  Increasing difficulty as the game progresses
+-  Multiple visual themes
+-  High score tracking
 
-## STRUCTURE
-  ## START SCREEN
-  * BASIC INSTRUCTIONS
-   * T to change theme
-   * SPACE to start the game
-  * WELCOME SCREEN
- ## MAIN GAME
-  * ARROW KEYS OR WASD KEYS TO MOVE
-  * SOME APPLES ARE POISONOUS - 1 LENGTH
-  * MOST APPLES ARE GOOD + 1 LENGTH
-  * ALL APPLE BECOME OBSTACLES
-  * SCORE
- ## GAME OVER
-   * BASIC INSTRUCTIONS
-   * T to change theme
-   * SPACE to restart the game
-   * ESCAPE to leave the game
-   *FINAL SCORE
+---
 
+#  Controls
 
-<img width="798" height="800" alt="image" src="https://github.com/user-attachments/assets/f1c443d9-e9f0-4b22-80f9-871677017b9f" />
+## Start Screen
 
-## IDEA
- it was just a silly idea I had after seeing some bugs while watching a video of someone who was trying to recreate the snake game. The bug was that the apples remained in the same position after you did them. So I got the idea to go on and make the game where that exactly is a function and not a bug. It was a fun experience. I got to learn a lot of different concepts especially about arrays and vector2s. I might update the game one or two times. 
+| Key | Action |
+|-----|--------|
+| **Space** | Start the game |
+| **T** | Change theme |
 
- 
-<img width="797" height="798" alt="image" src="https://github.com/user-attachments/assets/ae7b7eec-eedb-4e9e-b5f5-432fb79dbd61" />
+---
 
-# AUTHOR 
-# Made with ❤️ by Rosario Alexandros Morabito
+## During the Game
+
+| Key | Action |
+|-----|--------|
+| **Arrow Keys / WASD** | Move the snake |
+
+### Apples
+
+-  **Normal Apple**
+  - +1 Length
+  - +1 Score
+  - Leaves behind a permanent obstacle
+
+-  **Poison Apple**
+  - -1 Length
+  - Reduces score
+
+---
+
+## Game Over
+
+| Key | Action |
+|-----|--------|
+| **Space** | Restart |
+| **T** | Change theme |
+| **Escape** | Exit the game |
+
+Your **Final Score** will be displayed at the end of each run.
+
+---
+
+#  About the Idea
+
+This project was inspired by a bug I noticed in a video where apples remained on the map after being eaten.
+
+Instead of fixing the bug, I thought:
+
+> "What if that was actually the game mechanic?"
+
+That idea became the core of the game. Every apple turns into a permanent obstacle, forcing the player to constantly adapt as the available space shrinks.
+
+Building this project helped me learn more about:
+
+- Arrays
+- `Vector2` logic
+- Collision detection
+- Game state management with Pygame
+
+I plan to continue expanding the game with new mechanics and features.
+
+---
+
+# 🚀 Installation
+
+## 1. Download the project
+
+Click the green **`<> Code`** button at the top of this repository and select **Download ZIP**.
+
+Extract the ZIP file to your computer.
+
+---
+
+## 2. Install Pygame
+
+Open a terminal inside the project folder and run:
+
+```bash
+pip install pygame
+```
+
+---
+
+## 3. Run the game
+
+```bash
+python main.py
+```
+
+---
+
+# 🛠 Built With
+
+- Python
+- Pygame
+
+---
+
+# 📷 Gameplay
+
+*(Add screenshots or GIFs here)*
+
+Example:
+
+```
+/screenshots/gameplay.png
+```
+
+---
+
+# Future Plans
+
+- More obstacle types
+- Additional game modes
+- Sound effects and music
+- Power-ups
+- Better animations
+- Online leaderboard
+- More themes
+
+---
+
+# ❤️ Author
+
+Made with ❤️ by **Rosario Alexandros Morabito**
