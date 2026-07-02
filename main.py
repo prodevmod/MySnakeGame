@@ -42,7 +42,7 @@ class FRUIT:
                 pygame.draw.rect(screen,(255,0,0),fruit_rect)
 
     def randomize(self):
-        luck_factor = random.randint(1,3)
+        luck_factor = random.randint(1,10)
         
         if luck_factor == 3:
             self.is_poison = True
@@ -473,12 +473,12 @@ while True:
                 if game_state == "START":
                     game_state = "PLAYING"
                     # Start the 15-second timer when the game starts
-                    pygame.time.set_timer(CHANGE_EVENT, 15000)
+                    pygame.time.set_timer(CHANGE_EVENT, 5000)
                 elif game_state == "GAME_OVER":
                     main_game.reset()       
                     game_state = "PLAYING"
                     # Restart the 15-second timer when restarting the game
-                    pygame.time.set_timer(CHANGE_EVENT, 15000)  
+                    pygame.time.set_timer(CHANGE_EVENT, 5000)  
 
     # --- Drawing Logic ---
     screen.fill(bg_theme)
