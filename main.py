@@ -6,17 +6,17 @@ from pygame.math import Vector2
 def get_tinted_image(original_image, tint_color):
     # 1. Copy the original image so we don't overwrite the base file
     tinted_surface = original_image.copy()
-   
+    
     # 2. Create a PixelArray to look at the individual pixels
     pixels = pygame.PixelArray(tinted_surface)
-   
+    
     # 3. Replace pure white (255, 255, 255) with your new theme color
     pixels.replace((255, 255, 255), tint_color)
-   
+    
     # 4. CRITICAL: Delete the pixel array to "unlock" the surface
     # so Pygame is allowed to draw it to the screen again.
     del pixels
-   
+    
     return tinted_surface
 
 #Classes
@@ -25,28 +25,32 @@ class FRUIT:
         #x/y pos
         self.x = random.randint(0,cell_number-1)
         self.y = random.randint(0,cell_number-1)
-        self.pos = Vector2(self.x,self.y,)
+        self.pos = Vector2(self.x,self.y)
         self.is_poison = False
 
     def draw_fruit(self):
         fruit_rect = pygame.Rect(int(self.pos.x*cell_size),int(self.pos.y*cell_size),cell_size,cell_size)
-        if apple is not None:
-            screen.blit(apple,fruit_rect)
-        else:
-            pygame.draw.rect(screen,(255,0,0),fruit_rect)
+        if self.is_poison == True:
+            if apple_pois is not None:
+                screen.blit(apple_pois,fruit_rect)
+            else:
+                pygame.draw.rect(screen,(255,0,0),fruit_rect)
+        elif self.is_poison == False:
+            if apple is not None:
+                screen.blit(apple,fruit_rect)
+            else:
+                pygame.draw.rect(screen,(255,0,0),fruit_rect)
 
+    def randomize(self):
         luck_factor = random.randint(1,3)
-
+        
         if luck_factor == 3:
             self.is_poison = True
         else:
             self.is_poison = False
-
-    def randomize(self):
         self.x = random.randint(0,cell_number-1)
         self.y = random.randint(0,cell_number-1)
-        self.pos = Vector2(self.x,self.y,)      
-
+        self.pos = Vector2(self.x,self.y) 
 
 class SNAKE:
     def __init__(self):
@@ -59,7 +63,7 @@ class SNAKE:
         self.head_down = pygame.image.load('Graphics/head_down.png').convert_alpha()
         self.head_right = pygame.image.load('Graphics/head_right.png').convert_alpha()
         self.head_left = pygame.image.load('Graphics/head_left.png').convert_alpha()
-           
+            
         self.tail_up = pygame.image.load('Graphics/tail_up.png').convert_alpha()
         self.tail_down = pygame.image.load('Graphics/tail_down.png').convert_alpha()
         self.tail_right = pygame.image.load('Graphics/tail_right.png').convert_alpha()
@@ -79,7 +83,7 @@ class SNAKE:
     def draw_snake(self,snake_head_color,snake_color):
         self.update_head_graphics(snake_head_color)
         self.update_tail_graphics(snake_color)
-                   
+                    
         for index,block in enumerate(self.body):
             x_pos = int(block.x * cell_size)
             y_pos = int(block.y * cell_size)
@@ -140,7 +144,7 @@ class SNAKE:
         self.tail_down_copy = get_tinted_image(self.tail_down, snake_color)
         self.tail_right_copy = get_tinted_image(self.tail_right, snake_color)
         self.tail_left_copy = get_tinted_image(self.tail_left, snake_color)
-        self.body_vertical_copy =get_tinted_image(self.body_vertical, snake_color)
+        self.body_vertical_copy = get_tinted_image(self.body_vertical, snake_color)
         self.body_horizontal_copy = get_tinted_image(self.body_horizontal, snake_color)
 
         self.body_tr_copy = get_tinted_image(self.body_tr, snake_color)
@@ -152,7 +156,7 @@ class SNAKE:
         elif tail_relation == Vector2(-1,0): self.tail = self.tail_right_copy
         elif tail_relation == Vector2(0,1): self.tail = self.tail_up_copy
         elif tail_relation == Vector2(0,-1): self.tail = self.tail_down_copy
-   
+    
     def add_block(self):
         self.new_block  = True
 
@@ -199,12 +203,17 @@ class MAIN:
             self.fhit = True
             self.fruit.randomize()
             self.snake.play_crunch_sound()
+            # Reset the 15 second timer
+            pygame.time.set_timer(CHANGE_EVENT, 15000)
+            
         elif self.fruit.pos == self.snake.body[0] and self.fruit.is_poison == True and self.fhit == False:
             self.snake.remove_block()
             self.wall.blocks.insert(0,self.fruit.pos)
             self.fhit = True
             self.fruit.randomize()
             self.snake.play_poison_sound()
+            # Reset the 15 second timer
+            pygame.time.set_timer(CHANGE_EVENT, 15000)
 
     def check_fail(self):
         if not 0 <= self.snake.body[0].x < cell_number or not 0 <= self.snake.body[0].y < cell_number:
@@ -239,6 +248,8 @@ class MAIN:
         global game_state
         game_state = "GAME_OVER"
         self.snake.play_over_sound()
+        # Stop the timer when the game is over
+        pygame.time.set_timer(CHANGE_EVENT, 0)
 
     def reset(self):
         self.snake.body = [Vector2(7,10),Vector2(6,10),Vector2(5,10)]
@@ -246,7 +257,7 @@ class MAIN:
         self.wall.blocks = []
         self.fhit = False
         self.fruit.randomize()
-   
+    
     def draw_grass(self,grass_color):
         for row in range(cell_number):
             if row % 2 == 0:
@@ -273,7 +284,7 @@ class WELCOME:
         theme_string = "Press T to change theme / Press SPACE to Start"
         start_surface = start_font.render(start_string, True, (255, 70, 70))
         theme_surface = instr_font.render(theme_string, True, (255, 255, 255))
-       
+        
         start_x = int((cell_size * cell_number) / 2)
         start_y = int((cell_size * cell_number) / 2 - 100)
         start_rect = start_surface.get_rect(center=(start_x, start_y))
@@ -281,7 +292,7 @@ class WELCOME:
         theme_x = int((cell_size * cell_number) / 2)
         theme_y = int((cell_size * cell_number) / 2 )
         theme_rect_orig = theme_surface.get_rect(center=(theme_x, theme_y))
-       
+        
         bg_rect = pygame.Rect(
             start_rect.left - margin / 2,
             start_rect.top - margin / 2,
@@ -295,8 +306,8 @@ class WELCOME:
             theme_rect_orig.height + margin
         )
 
-        pygame.draw.rect(screen, (33, 33, 33), bg_rect)
-        pygame.draw.rect(screen, (33, 33, 33), theme_rect)
+        pygame.draw.rect(screen, (0, 0, 0), bg_rect)
+        pygame.draw.rect(screen, (0, 0, 0), theme_rect)
         screen.blit(start_surface, start_rect)
         screen.blit(theme_surface, theme_rect_orig)
 
@@ -327,7 +338,7 @@ class GAME_OVER_SCREEN:
         theme_x = int((cell_size * cell_number) / 2)
         theme_y = int((cell_size * cell_number) / 2 )
         theme_rect_orig = theme_surface.get_rect(center=(theme_x, theme_y))
-       
+        
         bg_rect = pygame.Rect(
             over_rect.left - margin / 2,
             over_rect.top - margin / 2,
@@ -378,14 +389,28 @@ height = cell_size * cell_number
 screen = pygame.display.set_mode((width,height)) 
 clock = pygame.time.Clock()
 
-apple = pygame.image.load('Graphics/apple.png').convert_alpha()
-wall = pygame.image.load('Graphics/wall.png')
-game_font = pygame.font.Font('Graphics/et.otf',40) 
-instr_font = pygame.font.Font('Graphics/et.otf',20) 
-start_font = pygame.font.Font('Graphics/bw.otf',90) 
-over_font = pygame.font.Font('Graphics/bw.otf',90) 
+# NOTE: Ensure your graphics/sound files exist in these folders, or handle the exceptions!
+try:
+    apple = pygame.image.load('Graphics/apple.png').convert_alpha()
+    apple_pois = pygame.image.load('Graphics/apple_pois.png').convert_alpha()
+    wall = pygame.image.load('Graphics/wall.png')
+    game_font = pygame.font.Font('Graphics/et.otf',40) 
+    instr_font = pygame.font.Font('Graphics/et.otf',20) 
+    start_font = pygame.font.Font('Graphics/bw.otf',90) 
+    over_font = pygame.font.Font('Graphics/bw.otf',90) 
+except:
+    # Fallback to defaults if files are missing just to keep the script running for testing
+    apple = None
+    apple_pois = None
+    wall = None
+    game_font = pygame.font.Font(None, 40)
+    instr_font = pygame.font.Font(None, 20)
+    start_font = pygame.font.Font(None, 90)
+    over_font = pygame.font.Font(None, 90)
+
 game_state = "START"
 final_score = 0
+CHANGE_EVENT =  pygame.USEREVENT + 1
 
 SCREEN_UPDATE = pygame.USEREVENT
 pygame.time.set_timer(SCREEN_UPDATE,150)
@@ -406,16 +431,19 @@ grass_theme = grass_themes[current_theme_index]
 snake_theme = snake_themes[current_theme_index]
 snake_head_theme = snake_head_themes[current_theme_index]
 
-
 while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
             sys.exit()
-               
+                
         if event.type == SCREEN_UPDATE and game_state == "PLAYING":
             main_game.update()
-               
+
+        # Handle the timer event running out
+        if event.type == CHANGE_EVENT and game_state == "PLAYING":
+            main_game.fruit.randomize()
+                
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_UP or event.key == pygame.K_w:
                 if main_game.snake.direction.y != 1:
@@ -436,7 +464,7 @@ while True:
                 grass_theme = grass_themes[current_theme_index]
                 snake_head_theme = snake_head_themes[current_theme_index]
                 snake_theme = snake_themes[current_theme_index]
-                           
+                            
             if event.key == pygame.K_ESCAPE and game_state == "GAME_OVER":
                 pygame.quit()
                 sys.exit()
@@ -444,13 +472,17 @@ while True:
             if event.key == pygame.K_SPACE:
                 if game_state == "START":
                     game_state = "PLAYING"
+                    # Start the 15-second timer when the game starts
+                    pygame.time.set_timer(CHANGE_EVENT, 15000)
                 elif game_state == "GAME_OVER":
                     main_game.reset()       
-                    game_state = "PLAYING"  
+                    game_state = "PLAYING"
+                    # Restart the 15-second timer when restarting the game
+                    pygame.time.set_timer(CHANGE_EVENT, 15000)  
 
     # --- Drawing Logic ---
     screen.fill(bg_theme)
-       
+        
     if game_state == "PLAYING":
         main_game.draw_elements(grass_theme,snake_head_theme,snake_theme)
         final_score = len(main_game.snake.body) - 3
@@ -460,7 +492,6 @@ while True:
     elif game_state == "GAME_OVER":
         main_game.draw_grass(grass_theme)
         game_over_screen.update(final_score)
-           
+            
     pygame.display.update()
     clock.tick(60)
-        
