@@ -21,5 +21,5 @@ It is a very fun game, especially when you keep track of your highest score. Som
    * ESCAPE to leave the game
    *FINAL SCORE
 
-##IDEA
+## IDEA
  it was just a silly idea I had after seeing some bugs while watching a video of someone who was trying to recreate the snake game. The bug was that the apples remained in the same position after you did them. So I got the idea to go on and make the game where that exactly is a function and not a bug. It was a fun experience. I got to learn a lot of different concepts especially about arrays and vector2s. I might update the game one or two times. 
