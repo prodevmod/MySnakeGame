@@ -80,7 +80,7 @@ I plan to continue expanding the game with new mechanics and features.
 
 ---
 
-# 🚀 Installation
+# Installation
 
 ## 1. Download the project
 
@@ -108,14 +108,14 @@ python main.py
 
 ---
 
-# 🛠 Built With
+#  Built With
 
 - Python
 - Pygame
 
 ---
 
-# 📷 Gameplay
+#  Gameplay
 
 *(Add screenshots or GIFs here)*
 
