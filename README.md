@@ -3,7 +3,7 @@ The classic's Retro Snake Game Knock Off with a Twist. In this game you don't ju
 It is a very fun game, especially when you keep track of your highest score. Some apples are poisonous and will end up in you losing size and score. 
 
 ## STRUCTURE
- ## START SCREEN
+  ## START SCREEN
   * BASIC INSTRUCTIONS
    * T to change theme
    * SPACE to start the game
@@ -20,3 +20,6 @@ It is a very fun game, especially when you keep track of your highest score. Som
    * SPACE to restart the game
    * ESCAPE to leave the game
    *FINAL SCORE
+
+##IDEA
+ it was just a silly idea I had after seeing some bugs while watching a video of someone who was trying to recreate the snake game. The bug was that the apples remained in the same position after you did them. So I got the idea to go on and make the game where that exactly is a function and not a bug. It was a fun experience. I got to learn a lot of different concepts especially about arrays and vector2s. I might update the game one or two times. 
