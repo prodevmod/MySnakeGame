@@ -7,8 +7,6 @@ A classic retro **Snake** game with a unique twist! Instead of simply eating app
 
 To make things even more interesting, some apples are **poisonous**, causing you to lose both size and score.
 
-https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExYTMxNDV2bWRkNzhlcGplajhlNDZwMHRnc2Qybmh2aWgwM3Z0dmVvayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Ilo9l8AUMna3mfykMu/giphy.gif
-
 #  Features
 
 -  Classic Snake gameplay with a unique obstacle mechanic
@@ -18,6 +16,7 @@ https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExYTMxNDV2bWRkNzhlcGplajhlNDZwMH
 -  Multiple visual themes
 -  Score tracking
 
+<img width="480" height="270" alt="gif" src="https://github.com/user-attachments/assets/4a0388d2-594a-4222-ab6b-9281ce8c9af2" />
 
 # Instalation
 
