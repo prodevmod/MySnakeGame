@@ -4,10 +4,6 @@ A classic retro **Snake** game with a unique twist! Instead of simply eating app
 
 To make things even more interesting, some apples are **poisonous**, causing you to lose both size and score.
 
-<img width="797" height="798" alt="image" src="https://github.com/user-attachments/assets/39557411-8e4a-4758-8794-6ef5b3be5ca0" />
-
-
-
 #  Features
 
 -  Classic Snake gameplay with a unique obstacle mechanic
@@ -74,32 +70,10 @@ Building this project helped me learn more about:
 
 I plan to continue expanding the game with new mechanics and features.
 
-<img width="804" height="829" alt="image" src="https://github.com/user-attachments/assets/f3ab1f7c-6b6d-4ed5-95b8-3652b2ab2acc" />
-
-
-
-
-
-<img width="798" height="822" alt="image" src="https://github.com/user-attachments/assets/ebccf03a-4d12-4ab4-84ab-8729bf39049f" />
-
-
-
-
 #  Built With
 
 - Python
 - Pygame
-
-# Future Plans
-
-- More obstacle types
-- Additional game modes
-- Sound effects and music
-- Power-ups
-- Better animations
-- Online leaderboard
-- More themes
-
 
 # ❤️ Author
 
