@@ -1,6 +1,16 @@
 #imports
-import pygame, sys, random
+import pygame, sys, random, os
 from pygame.math import Vector2
+
+# Helper function to get the correct path for assets when compiled to an .exe
+def resource_path(relative_path):
+    """ Get absolute path to resource, works for dev and for PyInstaller """
+    try:
+        # PyInstaller creates a temp folder and stores path in _MEIPASS
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
+    return os.path.join(base_path, relative_path)
 
 #Theme function for snake
 def get_tinted_image(original_image, tint_color):
@@ -59,26 +69,26 @@ class SNAKE:
         self.new_block = False
         self.minus_block = False
 
-        self.head_up = pygame.image.load('Graphics/head_up.png').convert_alpha()
-        self.head_down = pygame.image.load('Graphics/head_down.png').convert_alpha()
-        self.head_right = pygame.image.load('Graphics/head_right.png').convert_alpha()
-        self.head_left = pygame.image.load('Graphics/head_left.png').convert_alpha()
+        self.head_up = pygame.image.load(resource_path('Graphics/head_up.png')).convert_alpha()
+        self.head_down = pygame.image.load(resource_path('Graphics/head_down.png')).convert_alpha()
+        self.head_right = pygame.image.load(resource_path('Graphics/head_right.png')).convert_alpha()
+        self.head_left = pygame.image.load(resource_path('Graphics/head_left.png')).convert_alpha()
             
-        self.tail_up = pygame.image.load('Graphics/tail_up.png').convert_alpha()
-        self.tail_down = pygame.image.load('Graphics/tail_down.png').convert_alpha()
-        self.tail_right = pygame.image.load('Graphics/tail_right.png').convert_alpha()
-        self.tail_left = pygame.image.load('Graphics/tail_left.png').convert_alpha()
+        self.tail_up = pygame.image.load(resource_path('Graphics/tail_up.png')).convert_alpha()
+        self.tail_down = pygame.image.load(resource_path('Graphics/tail_down.png')).convert_alpha()
+        self.tail_right = pygame.image.load(resource_path('Graphics/tail_right.png')).convert_alpha()
+        self.tail_left = pygame.image.load(resource_path('Graphics/tail_left.png')).convert_alpha()
 
-        self.body_vertical = pygame.image.load('Graphics/body_vertical.png').convert_alpha()
-        self.body_horizontal = pygame.image.load('Graphics/body_horizontal.png').convert_alpha()
+        self.body_vertical = pygame.image.load(resource_path('Graphics/body_vertical.png')).convert_alpha()
+        self.body_horizontal = pygame.image.load(resource_path('Graphics/body_horizontal.png')).convert_alpha()
 
-        self.body_tr = pygame.image.load('Graphics/body_tr.png').convert_alpha()
-        self.body_tl = pygame.image.load('Graphics/body_tl.png').convert_alpha()
-        self.body_br = pygame.image.load('Graphics/body_br.png').convert_alpha()
-        self.body_bl = pygame.image.load('Graphics/body_bl.png').convert_alpha()
-        self.crunch_sound = pygame.mixer.Sound('Sound/crunch.ogg')
-        self.over_sound = pygame.mixer.Sound('Sound/over.ogg')
-        self.poison_sound = pygame.mixer.Sound('Sound/poison.ogg')
+        self.body_tr = pygame.image.load(resource_path('Graphics/body_tr.png')).convert_alpha()
+        self.body_tl = pygame.image.load(resource_path('Graphics/body_tl.png')).convert_alpha()
+        self.body_br = pygame.image.load(resource_path('Graphics/body_br.png')).convert_alpha()
+        self.body_bl = pygame.image.load(resource_path('Graphics/body_bl.png')).convert_alpha()
+        self.crunch_sound = pygame.mixer.Sound(resource_path('Sound/crunch.ogg'))
+        self.over_sound = pygame.mixer.Sound(resource_path('Sound/over.ogg'))
+        self.poison_sound = pygame.mixer.Sound(resource_path('Sound/poison.ogg'))
 
     def draw_snake(self,snake_head_color,snake_color):
         self.update_head_graphics(snake_head_color)
@@ -240,7 +250,7 @@ class MAIN:
         apple_rect = apple.get_rect(midright = (score_rect.left,score_rect.centery))
         bg_rect = pygame.Rect(apple_rect.left - margin/2,apple_rect.top - margin/2 ,apple_rect.width + score_rect.width + margin,apple_rect.height + margin)
 
-        pygame.draw.rect(screen,(33, 33, 33),bg_rect)
+        pygame.draw.rect(screen,(bg_theme),bg_rect)
         screen.blit(score_surface,score_rect)
         screen.blit(apple,apple_rect)
 
@@ -282,7 +292,7 @@ class WELCOME:
         margin = 20
         start_string = "SnakeGame"
         theme_string = "Press T to change theme / Press SPACE to Start"
-        start_surface = start_font.render(start_string, True, (255, 70, 70))
+        start_surface = start_font.render(start_string, True, (255, 0, 0))
         theme_surface = instr_font.render(theme_string, True, (255, 255, 255))
         
         start_x = int((cell_size * cell_number) / 2)
@@ -306,8 +316,8 @@ class WELCOME:
             theme_rect_orig.height + margin
         )
 
-        pygame.draw.rect(screen, (0, 0, 0), bg_rect)
-        pygame.draw.rect(screen, (0, 0, 0), theme_rect)
+        pygame.draw.rect(screen, (bg_theme), bg_rect)
+        pygame.draw.rect(screen, (bg_theme), theme_rect)
         screen.blit(start_surface, start_rect)
         screen.blit(theme_surface, theme_rect_orig)
 
@@ -321,7 +331,7 @@ class GAME_OVER_SCREEN:
     def over_text(self,final_score):
         margin = 20
         over_string = "GAME OVER"
-        over_surface = over_font.render(over_string, True, (255, 70, 70))
+        over_surface = over_font.render(over_string, True, (255, 0, 0))
         over_score = f"Your Score: {final_score} "
         over_score_surface = over_font.render(over_score, True, (255, 213, 79))
         theme_string = "Press T to change theme / Press SPACE to Restart"
@@ -357,11 +367,11 @@ class GAME_OVER_SCREEN:
             theme_rect_orig.height + margin
         )
 
-        pygame.draw.rect(screen, (33, 33, 33), bg_rect)
+        pygame.draw.rect(screen, (bg_theme), bg_rect)
         screen.blit(over_surface, over_rect)
-        pygame.draw.rect(screen, (33, 33, 33), bg_rect_two)
+        pygame.draw.rect(screen, (bg_theme), bg_rect_two)
         screen.blit(over_score_surface , over_sc_rect)
-        pygame.draw.rect(screen, (33, 33, 33), theme_rect)
+        pygame.draw.rect(screen, (bg_theme), theme_rect)
         screen.blit(theme_surface, theme_rect_orig)
 
 class BLOCK:
@@ -391,13 +401,13 @@ clock = pygame.time.Clock()
 
 # NOTE: Ensure your graphics/sound files exist in these folders, or handle the exceptions!
 try:
-    apple = pygame.image.load('Graphics/apple.png').convert_alpha()
-    apple_pois = pygame.image.load('Graphics/apple_pois.png').convert_alpha()
-    wall = pygame.image.load('Graphics/wall.png')
-    game_font = pygame.font.Font('Graphics/et.otf',40) 
-    instr_font = pygame.font.Font('Graphics/et.otf',20) 
-    start_font = pygame.font.Font('Graphics/bw.otf',90) 
-    over_font = pygame.font.Font('Graphics/bw.otf',90) 
+    apple = pygame.image.load(resource_path('Graphics/apple.png')).convert_alpha()
+    apple_pois = pygame.image.load(resource_path('Graphics/apple_pois.png')).convert_alpha()
+    wall = pygame.image.load(resource_path('Graphics/wall.png'))
+    game_font = pygame.font.Font(resource_path('Graphics/et.otf'),40) 
+    instr_font = pygame.font.Font(resource_path('Graphics/et.otf'),20) 
+    start_font = pygame.font.Font(resource_path('Graphics/bw.otf'),90) 
+    over_font = pygame.font.Font(resource_path('Graphics/bw.otf'),90) 
 except:
     # Fallback to defaults if files are missing just to keep the script running for testing
     apple = None
