@@ -20,6 +20,14 @@ To make things even more interesting, some apples are **poisonous**, causing you
 
 # Instalation
 
+Easy Version:
+
+Go to this site and click Download
+
+https://prodevmod.github.io/MySnakeGame/
+
+Else:
+
 1. Download the Game:
 
 * Go to the Releases page on the right side of this repository.
