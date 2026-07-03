@@ -1,8 +1,13 @@
 # 🐍 SNAKEGAME
 
+<img width="331" height="329" alt="image" src="https://github.com/user-attachments/assets/b9c25ebb-51c5-4b09-bf6a-97ce313e3571" />
+
+
 A classic retro **Snake** game with a unique twist! Instead of simply eating apples, every apple you eat becomes a **permanent obstacle**, making the map progressively more challenging. As your snake grows, so does the difficulty.
 
 To make things even more interesting, some apples are **poisonous**, causing you to lose both size and score.
+
+https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExYTMxNDV2bWRkNzhlcGplajhlNDZwMHRnc2Qybmh2aWgwM3Z0dmVvayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Ilo9l8AUMna3mfykMu/giphy.gif
 
 #  Features
 
@@ -12,6 +17,20 @@ To make things even more interesting, some apples are **poisonous**, causing you
 -  Increasing difficulty as the game progresses
 -  Multiple visual themes
 -  Score tracking
+
+
+# Instalation
+
+1. Download the Game:
+
+* Go to the Releases page on the right side of this repository.
+
+* Download the latest main.exe file.
+
+2. Run the Game:
+
+* Simply double-click the main.exe file to launch the game.
+
   
 #  Controls
 
