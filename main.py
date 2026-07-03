@@ -291,7 +291,7 @@ class WELCOME:
     def start_text(self):
         margin = 20
         start_string = "SnakeGame"
-        theme_string = "Press T to change theme / Press SPACE to Start"
+        theme_string = "T to change theme / SPACE to Start"
         start_surface = start_font.render(start_string, True, (255, 0, 0))
         theme_surface = instr_font.render(theme_string, True, (255, 255, 255))
         
@@ -334,7 +334,7 @@ class GAME_OVER_SCREEN:
         over_surface = over_font.render(over_string, True, (255, 0, 0))
         over_score = f"Your Score: {final_score} "
         over_score_surface = over_font.render(over_score, True, (255, 213, 79))
-        theme_string = "Press T to change theme / Press SPACE to Restart"
+        theme_string = "T to change theme / SPACE to Restart / ESC to LEAVE"
         theme_surface = instr_font.render(theme_string, True, (255, 255, 255))
 
         over_x = int((cell_size * cell_number) / 2)
@@ -394,9 +394,18 @@ pygame.init()
 # Layout setup
 cell_size = 40
 cell_number = 20
-width = cell_size * cell_number
-height = cell_size * cell_number
-screen = pygame.display.set_mode((width,height)) 
+game_width = cell_size * cell_number
+game_height = cell_size * cell_number
+
+window = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
+window_width = window.get_width()
+window_height = window.get_height()
+
+screen = pygame.Surface((game_width, game_height)) 
+
+offset_x = (window_width - game_width) // 2
+offset_y = (window_height - game_height) // 2
+
 clock = pygame.time.Clock()
 
 # NOTE: Ensure your graphics/sound files exist in these folders, or handle the exceptions!
@@ -490,7 +499,10 @@ while True:
                     # Restart the 15-second timer when restarting the game
                     pygame.time.set_timer(CHANGE_EVENT, 5000)  
 
-    # --- Drawing Logic ---
+# --- Drawing Logic ---
+
+    window.fill((0, 0, 0))
+
     screen.fill(bg_theme)
         
     if game_state == "PLAYING":
@@ -502,6 +514,8 @@ while True:
     elif game_state == "GAME_OVER":
         main_game.draw_grass(grass_theme)
         game_over_screen.update(final_score)
-            
+
+    window.blit(screen, (offset_x, offset_y))
+    
     pygame.display.update()
     clock.tick(60)
