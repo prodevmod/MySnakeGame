@@ -7,7 +7,6 @@ To make things even more interesting, some apples are **poisonous**, causing you
 <img width="797" height="798" alt="image" src="https://github.com/user-attachments/assets/39557411-8e4a-4758-8794-6ef5b3be5ca0" />
 
 
----
 
 #  Features
 
@@ -16,10 +15,8 @@ To make things even more interesting, some apples are **poisonous**, causing you
 -  Poison apples reduce your snake's length and score
 -  Increasing difficulty as the game progresses
 -  Multiple visual themes
--  High score tracking
-
----
-
+-  Score tracking
+  
 #  Controls
 
 ## Start Screen
@@ -28,8 +25,6 @@ To make things even more interesting, some apples are **poisonous**, causing you
 |-----|--------|
 | **Space** | Start the game |
 | **T** | Change theme |
-
----
 
 ## During the Game
 
@@ -48,7 +43,6 @@ To make things even more interesting, some apples are **poisonous**, causing you
   - -1 Length
   - Reduces score
 
----
 
 ## Game Over
 
@@ -59,9 +53,6 @@ To make things even more interesting, some apples are **poisonous**, causing you
 | **Escape** | Exit the game |
 
 Your **Final Score** will be displayed at the end of each run.
-
----
-
 
 
 #  About the Idea
@@ -86,57 +77,18 @@ I plan to continue expanding the game with new mechanics and features.
 <img width="804" height="829" alt="image" src="https://github.com/user-attachments/assets/f3ab1f7c-6b6d-4ed5-95b8-3652b2ab2acc" />
 
 
----
 
-# Installation
 
-## 1. Download the project
-
-Click the green **`<> Code`** button at the top of this repository and select **Download ZIP**.
-
-Extract the ZIP file to your computer.
-
----
-
-## 2. Install Pygame
-
-Open a terminal inside the project folder and run:
-
-```bash
-pip install pygame
-```
-
----
-
-## 3. Run the game
 
 <img width="798" height="822" alt="image" src="https://github.com/user-attachments/assets/ebccf03a-4d12-4ab4-84ab-8729bf39049f" />
 
 
-```bash
-python main.py
-```
 
----
 
 #  Built With
 
 - Python
 - Pygame
-
----
-
-#  Gameplay
-
-*(Add screenshots or GIFs here)*
-
-Example:
-
-```
-/screenshots/gameplay.png
-```
-
----
 
 # Future Plans
 
@@ -148,7 +100,6 @@ Example:
 - Online leaderboard
 - More themes
 
----
 
 # ❤️ Author
 
