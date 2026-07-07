@@ -1054,25 +1054,6 @@ imported by:
 </div>
 
 <div class="node">
-  <a name="_ios_support"></a>
-  <a target="code" href="///C:/Program%20Files/Python313/Lib/_ios_support.py" type="text/plain"><tt>_ios_support</tt></a>
-<span class="moduletype">SourceModule</span>  <div class="import">
-imports:
-    <a href="#ctypes">ctypes</a>
- &#8226;   <a href="#ctypes.util">ctypes.util</a>
- &#8226;   <a href="#sys">sys</a>
-
-  </div>
-  <div class="import">
-imported by:
-    <a href="#platform">platform</a>
- &#8226;   <a href="#webbrowser">webbrowser</a>
-
-  </div>
-
-</div>
-
-<div class="node">
   <a name="_json"></a>
   <tt>_json</tt> <span class="moduletype"><i>(builtin module)</i></span>  <div class="import">
 imports:
@@ -3400,34 +3381,16 @@ imported by:
 
 <div class="node">
   <a name="backports"></a>
-  <a target="code" href="///C:/Users/Alex/AppData/Roaming/Python/Python313/site-packages/setuptools/_vendor/backports/__init__.py" type="text/plain"><tt>backports</tt></a>
-<span class="moduletype">Package</span>  <div class="import">
-imports:
-    <a href="#backports.tarfile">backports.tarfile</a>
- &#8226;   <a href="#pkgutil">pkgutil</a>
-
-  </div>
-  <div class="import">
-imported by:
-    <a href="#backports.tarfile">backports.tarfile</a>
- &#8226;   <a href="#setuptools._vendor.jaraco.context">setuptools._vendor.jaraco.context</a>
-
-  </div>
-
-</div>
-
-<div class="node">
-  <a name="backports.tarfile"></a>
-  <a target="code" href="" type="text/plain"><tt>backports.tarfile</tt></a>
+  <a target="code" href="" type="text/plain"><tt>backports</tt></a>
 <span class="moduletype">AliasNode</span>  <div class="import">
 imports:
-    <a href="#backports">backports</a>
+    <a href="#setuptools._vendor.backports">setuptools._vendor.backports</a>
  &#8226;   <a href="#setuptools._vendor.backports.tarfile">setuptools._vendor.backports.tarfile</a>
 
   </div>
   <div class="import">
 imported by:
-    <a href="#backports">backports</a>
+    <a href="#setuptools._vendor.backports.tarfile">setuptools._vendor.backports.tarfile</a>
  &#8226;   <a href="#setuptools._vendor.jaraco.context">setuptools._vendor.jaraco.context</a>
 
   </div>
@@ -4492,7 +4455,6 @@ imported by:
 imports:
     <a href="#_ctypes">_ctypes</a>
  &#8226;   <a href="#ctypes._endian">ctypes._endian</a>
- &#8226;   <a href="#ctypes.util">ctypes.util</a>
  &#8226;   <a href="#nt">nt</a>
  &#8226;   <a href="#os">os</a>
  &#8226;   <a href="#struct">struct</a>
@@ -4503,8 +4465,7 @@ imports:
   </div>
   <div class="import">
 imported by:
-    <a href="#_ios_support">_ios_support</a>
- &#8226;   <a href="#_pyrepl._minimal_curses">_pyrepl._minimal_curses</a>
+    <a href="#_pyrepl._minimal_curses">_pyrepl._minimal_curses</a>
  &#8226;   <a href="#_pyrepl.windows_console">_pyrepl.windows_console</a>
  &#8226;   <a href="#ctypes._aix">ctypes._aix</a>
  &#8226;   <a href="#ctypes._endian">ctypes._endian</a>
@@ -4659,9 +4620,7 @@ imports:
   </div>
   <div class="import">
 imported by:
-    <a href="#_ios_support">_ios_support</a>
- &#8226;   <a href="#_pyrepl._minimal_curses">_pyrepl._minimal_curses</a>
- &#8226;   <a href="#ctypes">ctypes</a>
+    <a href="#_pyrepl._minimal_curses">_pyrepl._minimal_curses</a>
 
   </div>
 
@@ -9517,12 +9476,18 @@ imported by:
 
 <div class="node">
   <a name="jaraco"></a>
-  <a target="code" href="-" type="text/plain"><tt>jaraco</tt></a>
-<span class="moduletype">NamespacePackage</span>  <div class="import">
+  <a target="code" href="" type="text/plain"><tt>jaraco</tt></a>
+<span class="moduletype">AliasNode</span>  <div class="import">
+imports:
+    <a href="#setuptools._vendor.jaraco">setuptools._vendor.jaraco</a>
+
+  </div>
+  <div class="import">
 imported by:
     <a href="#jaraco.context">jaraco.context</a>
  &#8226;   <a href="#jaraco.functools">jaraco.functools</a>
  &#8226;   <a href="#jaraco.text">jaraco.text</a>
+ &#8226;   <a href="#setuptools._vendor.jaraco.text">setuptools._vendor.jaraco.text</a>
 
   </div>
 
@@ -9572,28 +9537,13 @@ imported by:
 <span class="moduletype">AliasNode</span>  <div class="import">
 imports:
     <a href="#jaraco">jaraco</a>
- &#8226;   <a href="#jaraco.text.yield_lines">jaraco.text.yield_lines</a>
  &#8226;   <a href="#setuptools._vendor.jaraco.text">setuptools._vendor.jaraco.text</a>
 
   </div>
   <div class="import">
 imported by:
-    <a href="#pkg_resources">pkg_resources</a>
- &#8226;   <a href="#setuptools._entry_points">setuptools._entry_points</a>
+    <a href="#setuptools._entry_points">setuptools._entry_points</a>
  &#8226;   <a href="#setuptools._reqs">setuptools._reqs</a>
- &#8226;   <a href="#setuptools.command._requirestxt">setuptools.command._requirestxt</a>
-
-  </div>
-
-</div>
-
-<div class="node">
-  <a name="jaraco.text.yield_lines"></a>
-  <a target="code" href="" type="text/plain"><tt>jaraco.text.yield_lines</tt></a>
-<span class="moduletype">MissingModule</span>  <div class="import">
-imported by:
-    <a href="#jaraco.text">jaraco.text</a>
- &#8226;   <a href="#setuptools._entry_points">setuptools._entry_points</a>
  &#8226;   <a href="#setuptools.command._requirestxt">setuptools.command._requirestxt</a>
 
   </div>
@@ -18530,7 +18480,6 @@ imports:
  &#8226;   <a href="#importlib.machinery">importlib.machinery</a>
  &#8226;   <a href="#inspect">inspect</a>
  &#8226;   <a href="#io">io</a>
- &#8226;   <a href="#jaraco.text">jaraco.text</a>
  &#8226;   <a href="#linecache">linecache</a>
  &#8226;   <a href="#ntpath">ntpath</a>
  &#8226;   <a href="#operator">operator</a>
@@ -18558,6 +18507,7 @@ imports:
  &#8226;   <a href="#plistlib">plistlib</a>
  &#8226;   <a href="#posixpath">posixpath</a>
  &#8226;   <a href="#re">re</a>
+ &#8226;   <a href="#setuptools._vendor.jaraco.text">setuptools._vendor.jaraco.text</a>
  &#8226;   <a href="#stat">stat</a>
  &#8226;   <a href="#sys">sys</a>
  &#8226;   <a href="#sysconfig">sysconfig</a>
@@ -18604,8 +18554,7 @@ imports:
   </div>
   <div class="import">
 imported by:
-    <a href="#backports">backports</a>
- &#8226;   <a href="#pkg_resources">pkg_resources</a>
+    <a href="#pkg_resources">pkg_resources</a>
  &#8226;   <a href="#pydoc">pydoc</a>
  &#8226;   <a href="#pyi_rth_pkgutil.py">pyi_rth_pkgutil.py</a>
  &#8226;   <a href="#runpy">runpy</a>
@@ -18621,7 +18570,6 @@ imported by:
 <span class="moduletype">SourceModule</span>  <div class="import">
 imports:
     <a href="#'java.lang'">'java.lang'</a>
- &#8226;   <a href="#_ios_support">_ios_support</a>
  &#8226;   <a href="#_wmi">_wmi</a>
  &#8226;   <a href="#collections">collections</a>
  &#8226;   <a href="#ctypes">ctypes</a>
@@ -21795,7 +21743,6 @@ imports:
  &#8226;   <a href="#itertools">itertools</a>
  &#8226;   <a href="#jaraco.functools">jaraco.functools</a>
  &#8226;   <a href="#jaraco.text">jaraco.text</a>
- &#8226;   <a href="#jaraco.text.yield_lines">jaraco.text.yield_lines</a>
  &#8226;   <a href="#more_itertools">more_itertools</a>
  &#8226;   <a href="#operator">operator</a>
  &#8226;   <a href="#setuptools">setuptools</a>
@@ -22042,7 +21989,7 @@ imports:
   </div>
   <div class="import">
 imported by:
-    <a href="#setuptools._vendor.backports.tarfile">setuptools._vendor.backports.tarfile</a>
+    <a href="#backports">backports</a>
 
   </div>
 
@@ -22054,6 +22001,7 @@ imported by:
 <span class="moduletype">Package</span>  <div class="import">
 imports:
     <a href="#argparse">argparse</a>
+ &#8226;   <a href="#backports">backports</a>
  &#8226;   <a href="#builtins">builtins</a>
  &#8226;   <a href="#bz2">bz2</a>
  &#8226;   <a href="#copy">copy</a>
@@ -22064,7 +22012,6 @@ imports:
  &#8226;   <a href="#os">os</a>
  &#8226;   <a href="#pwd">pwd</a>
  &#8226;   <a href="#re">re</a>
- &#8226;   <a href="#setuptools._vendor.backports">setuptools._vendor.backports</a>
  &#8226;   <a href="#setuptools._vendor.backports.tarfile.compat.py38">setuptools._vendor.backports.tarfile.compat.py38</a>
  &#8226;   <a href="#shutil">shutil</a>
  &#8226;   <a href="#stat">stat</a>
@@ -22077,8 +22024,9 @@ imports:
   </div>
   <div class="import">
 imported by:
-    <a href="#backports.tarfile">backports.tarfile</a>
+    <a href="#backports">backports</a>
  &#8226;   <a href="#setuptools._vendor.backports.tarfile.compat">setuptools._vendor.backports.tarfile.compat</a>
+ &#8226;   <a href="#setuptools._vendor.jaraco.context">setuptools._vendor.jaraco.context</a>
 
   </div>
 
@@ -22373,7 +22321,8 @@ imports:
   </div>
   <div class="import">
 imported by:
-    <a href="#setuptools._vendor.jaraco.context">setuptools._vendor.jaraco.context</a>
+    <a href="#jaraco">jaraco</a>
+ &#8226;   <a href="#setuptools._vendor.jaraco.context">setuptools._vendor.jaraco.context</a>
  &#8226;   <a href="#setuptools._vendor.jaraco.functools">setuptools._vendor.jaraco.functools</a>
  &#8226;   <a href="#setuptools._vendor.jaraco.text">setuptools._vendor.jaraco.text</a>
 
@@ -22388,11 +22337,11 @@ imported by:
 imports:
     <a href="#__future__">__future__</a>
  &#8226;   <a href="#backports">backports</a>
- &#8226;   <a href="#backports.tarfile">backports.tarfile</a>
  &#8226;   <a href="#contextlib">contextlib</a>
  &#8226;   <a href="#functools">functools</a>
  &#8226;   <a href="#operator">operator</a>
  &#8226;   <a href="#os">os</a>
+ &#8226;   <a href="#setuptools._vendor.backports.tarfile">setuptools._vendor.backports.tarfile</a>
  &#8226;   <a href="#setuptools._vendor.jaraco">setuptools._vendor.jaraco</a>
  &#8226;   <a href="#shutil">shutil</a>
  &#8226;   <a href="#subprocess">subprocess</a>
@@ -22446,6 +22395,7 @@ imports:
  &#8226;   <a href="#importlib.resources">importlib.resources</a>
  &#8226;   <a href="#importlib_resources">importlib_resources</a>
  &#8226;   <a href="#itertools">itertools</a>
+ &#8226;   <a href="#jaraco">jaraco</a>
  &#8226;   <a href="#jaraco.context">jaraco.context</a>
  &#8226;   <a href="#jaraco.functools">jaraco.functools</a>
  &#8226;   <a href="#re">re</a>
@@ -22456,6 +22406,24 @@ imports:
   <div class="import">
 imported by:
     <a href="#jaraco.text">jaraco.text</a>
+ &#8226;   <a href="#pkg_resources">pkg_resources</a>
+ &#8226;   <a href="#setuptools._vendor.jaraco.text.layouts">setuptools._vendor.jaraco.text.layouts</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="setuptools._vendor.jaraco.text.layouts"></a>
+  <a target="code" href="///C:/Users/Alex/AppData/Roaming/Python/Python313/site-packages/setuptools/_vendor/jaraco/text/layouts.py" type="text/plain"><tt>setuptools._vendor.jaraco.text.layouts</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#setuptools._vendor.jaraco.text">setuptools._vendor.jaraco.text</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#jaraco.text.layouts">jaraco.text.layouts</a>
 
   </div>
 
@@ -23656,7 +23624,6 @@ imports:
  &#8226;   <a href="#io">io</a>
  &#8226;   <a href="#itertools">itertools</a>
  &#8226;   <a href="#jaraco.text">jaraco.text</a>
- &#8226;   <a href="#jaraco.text.yield_lines">jaraco.text.yield_lines</a>
  &#8226;   <a href="#packaging.requirements">packaging.requirements</a>
  &#8226;   <a href="#setuptools">setuptools</a>
  &#8226;   <a href="#setuptools._reqs">setuptools._reqs</a>
@@ -25250,7 +25217,6 @@ imported by:
  &#8226;   <a href="#_colorize">_colorize</a>
  &#8226;   <a href="#_compression">_compression</a>
  &#8226;   <a href="#_distutils_hack">_distutils_hack</a>
- &#8226;   <a href="#_ios_support">_ios_support</a>
  &#8226;   <a href="#_pydatetime">_pydatetime</a>
  &#8226;   <a href="#_pydecimal">_pydecimal</a>
  &#8226;   <a href="#_pyrepl.console">_pyrepl.console</a>
@@ -27084,8 +27050,7 @@ imported by:
   <a target="code" href="///C:/Program%20Files/Python313/Lib/webbrowser.py" type="text/plain"><tt>webbrowser</tt></a>
 <span class="moduletype">SourceModule</span>  <div class="import">
 imports:
-    <a href="#_ios_support">_ios_support</a>
- &#8226;   <a href="#argparse">argparse</a>
+    <a href="#argparse">argparse</a>
  &#8226;   <a href="#copy">copy</a>
  &#8226;   <a href="#ctypes">ctypes</a>
  &#8226;   <a href="#os">os</a>
